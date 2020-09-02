@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<link rel=" stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css " integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z " crossorigin="anonymous ">">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+    <title>Alunos</title>
+</head>
+
+<body>
+
+    <h1 style="font-family: bowlby one;" class="text-center">Alunos cadastrados</h1>
+
+    <div class="formulario col-10" style="">
+        <form style="width: 400px; ">
+            <div class="form-group row-3">
+                <label for="name " style="font-family:sans-serif ">Nome:</label>
+
+                <input name="nomes" class="form-control " id="name" [(ngModel)]="aluno.nome" aria-describedby="nameHelp " placeholder="Seu nome ">
+
+                <br>
+                <button (click)="SalvarAlunos()" class="btn btn-success row-3" style="">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table ">
+        <table class="table table-dark rounded ">
+            <thead>
+                <tr>
+                    <th scope="col ">#</th>
+                    <th scope="col ">Nome</th>
+                    <th scope="col ">Editar</th>
+                    <th scope="col ">Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of alunos ">
+                    <th>{{a.id}}</th>
+                    <td>{{a.nome}}</td>
+                    <td><button type="submit " class="btn btn-primary " (click)="EditarAlunos()">Editar</button></td>
+                    <td><button type="submit " class="btn btn-danger " (click)="DeletarAlunos(a.id)">Excluir</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
